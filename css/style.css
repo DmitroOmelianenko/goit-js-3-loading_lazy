@@ -1,0 +1,60 @@
+body {
+  background-color: gray;
+}
+
+img {
+  width: 300px;
+  border-radius: 20px;
+  transform: translateY(50px); /* Початкове зміщення для ефекту lazy loading */
+  opacity: 0;
+  transition: transform 1s ease, opacity 1s ease; /* Скорочуємо час переходу */
+}
+
+img.loaded {
+  transform: translateY(0); /* Повертаємо на місце після завантаження */
+  opacity: 1;
+}
+
+.container {
+  width: 1200px;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  justify-content: right;
+  margin-top: 300px;
+}
+
+.title {
+  color: aliceblue;
+  text-align: center;
+}
+
+.item {
+  list-style: none;
+  background-color: white;
+  border: black;
+  border-radius: 20px;
+  transform: translateY(50px); /* Початкове зміщення для ефекту lazy loading */
+  opacity: 0;
+  transition: transform 1s ease, opacity 1s ease; /* Скорочуємо час переходу */
+}
+
+.item.loaded {
+  transform: translateY(0); /* Повертаємо на місце після завантаження */
+  opacity: 1;
+}
+
+.item:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.image {
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.image.animation {
+    opacity: 1;
+}
